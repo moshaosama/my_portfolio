@@ -29,6 +29,7 @@ export const projects: Project[] = [
     'Developed as part of company work with clean navigation and polished mobile flows.',
     ['React Native', 'TypeScript', 'UI/UX'],
     null,
+    "https://sarmad-v6.vercel.app/"
   ),
   p(
     'Babben',
@@ -36,7 +37,8 @@ export const projects: Project[] = [
     '2026',
     'Delivered within the company product team with polished interactions and strong branding.',
     ['React', 'TypeScript', 'Design'],
-    null,
+    "null",
+    "https://babeen-fe-dashboard-5gak.vercel.app/"
   ),
   p(
     'Brokerize',
@@ -45,6 +47,7 @@ export const projects: Project[] = [
     'Built in the company finance portfolio to support trading workflows and user engagement.',
     ['TypeScript', 'React', 'Node.js'],
     null,
+    "https://brokerize-v3.vercel.app/"
   ),
   p(
     'SB and Native',
@@ -53,6 +56,7 @@ export const projects: Project[] = [
     'Created as part of company mobile work, blending native and hybrid experiences for users.',
     ['React Native', 'TypeScript', 'Mobile'],
     null,
+    "https://sb-system-zeta.vercel.app"
   ),
   p(
     'AWAAB APP',
@@ -61,6 +65,7 @@ export const projects: Project[] = [
     'Built during company development with a calm mobile interface and smooth interactions.',
     ['React Native', 'TypeScript', 'UI'],
     null,
+    
   ),
   p(
     'Jitsi_metting',
