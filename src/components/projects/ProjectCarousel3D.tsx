@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { motion } from 'framer-motion'
 import { FiArrowUpRight, FiGithub } from 'react-icons/fi'
 import { projects } from '../../data/projects'
 import { useScrollFrame } from '../../context/ScrollContext'
@@ -90,17 +91,38 @@ export default function ProjectCarousel3D() {
       style={{ height: `${Math.max(count, 1) * SCROLL_VH_PER_PROJECT}vh` }}
     >
       <div className="work-carousel-sticky">
-        <div className="work-carousel-header">
-          <div>
+        <motion.div
+          initial={{ opacity: 0, y: 400 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.8 }}
+          className="work-carousel-header"
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 350 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+          >
             <p className="eyebrow">Selected Work</p>
             <p className="work-carousel-active-title font-display">{active.title}</p>
-          </div>
-          <div className="work-carousel-counter">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 350 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="work-carousel-counter"
+          >
             {String(index + 1).padStart(2, '0')} / {String(count).padStart(2, '0')}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 350 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.3 }}
           className="carousel-stage"
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
@@ -172,10 +194,17 @@ export default function ProjectCarousel3D() {
               )
             })}
           </div>
-        </div>
+        </motion.div>
 
         {/* Nav dots */}
-        <div className="carousel-dots" aria-label="Project navigation">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.5 }}
+          className="carousel-dots"
+          aria-label="Project navigation"
+        >
           {projects.map((_, i) => (
             <button
               key={i}
@@ -184,9 +213,15 @@ export default function ProjectCarousel3D() {
               aria-label={`Go to project ${i + 1}`}
             />
           ))}
-        </div>
+        </motion.div>
 
-        <div className="carousel-controls">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.6 }}
+          className="carousel-controls"
+        >
           <button
             className="carousel-nav-btn"
             onClick={() => goTo(index - 1)}
@@ -204,7 +239,7 @@ export default function ProjectCarousel3D() {
           >
             →
           </button>
-        </div>
+        </motion.div>
       </div>
     </section>
   )
